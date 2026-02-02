@@ -239,3 +239,5 @@ document-qa-rag/
 ## License
 
 yousuf suhail (yousufsuhaily@gmail.com) | Complete GenAI Interview Assignment with All Bonus Features
+
+** OUTPUT IMAGES ARE IN OUTPUT_SCREENSHOT FOLDER **
