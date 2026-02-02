@@ -176,3 +176,5 @@ Tests cover:
 ## License
 
 yousuf suhail (yousufsuhaily@gmail.com)
+
+* OUTPUT IMAGES ARE IN OUTPUT_SCREENSHOT FOLDER **
