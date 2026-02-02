@@ -1,0 +1,41 @@
+# Document Q&A System - Intelligent RAG Implementation
+
+## Core Dependencies
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-chroma>=0.0.10
+
+## Vector Database
+chromadb>=0.4.18
+
+## Embeddings (Sentence Transformers)
+sentence-transformers>=2.2.2
+
+## LLM Integration (Ollama)
+ollama>=0.1.0
+
+## Document Loaders
+pypdf>=3.17.0
+unstructured>=0.11.0
+
+## BONUS: Additional Document Formats
+python-docx>=0.8.11
+python-pptx>=0.6.21
+openpyxl>=3.1.2
+markdown>=3.5.0
+
+## BONUS: Web Interface
+streamlit>=1.28.0
+
+## BONUS: Conversation Memory (built-in, no extra package needed)
+
+## Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+## Development & Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+httpx>=0.25.0

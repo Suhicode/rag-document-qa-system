@@ -1,0 +1,75 @@
+Retrieval-Augmented Generation (RAG): A Comprehensive Guide
+
+Introduction
+============
+Retrieval-Augmented Generation (RAG) is a technique that enhances large language models by retrieving relevant information from external knowledge sources before generating responses. This approach combines the strengths of information retrieval systems with generative AI models.
+
+How RAG Works
+=============
+The RAG system works through a multi-step process:
+
+1. Document Indexing: Documents are first processed and split into manageable chunks. These chunks are then converted into vector embeddings using sentence transformers and stored in a vector database like ChromaDB.
+
+2. Query Processing: When a user asks a question, the system first converts the question into a vector embedding using the same model used for document chunks.
+
+3. Similarity Search: The system searches the vector database to find the most similar document chunks based on cosine similarity between the query and document embeddings.
+
+4. Context Generation: The retrieved chunks are combined to create a context that is relevant to the user's question.
+
+5. Answer Generation: The context and question are passed to a large language model (like Llama 3.2) which generates an answer based strictly on the provided context.
+
+Key Components
+==============
+
+Vector Embeddings
+-----------------
+Vector embeddings are numerical representations of text that capture semantic meaning. The all-MiniLM-L6-v2 model is commonly used because it provides a good balance between performance and efficiency, generating 384-dimensional embeddings.
+
+Chunking Strategy
+-----------------
+The RecursiveCharacterTextSplitter is used to split documents into chunks of approximately 500 characters with 100-character overlap. This ensures that semantic boundaries are preserved and no important context is lost at chunk boundaries.
+
+Vector Database
+---------------
+ChromaDB is used as the vector database because it's lightweight, embeddable, and provides persistent storage. It supports efficient similarity search using cosine similarity.
+
+Large Language Model
+--------------------
+Ollama with Llama 3.2 provides the generative capability. The model is configured with a temperature of 0.0 to ensure factual, consistent responses that don't hallucinate information.
+
+Advantages of RAG
+================
+
+1. Source Citation: RAG provides verifiable sources for every answer, making it possible to fact-check responses.
+
+2. Reduced Hallucination: By constraining the LLM to use only retrieved context, RAG significantly reduces the likelihood of hallucinated information.
+
+3. Up-to-date Information: Documents can be updated without retraining the entire model, making it easier to maintain current information.
+
+4. Domain Specificity: RAG can be specialized for specific domains by simply adding relevant documents to the knowledge base.
+
+Limitations
+===========
+
+1. Retrieval Quality: The quality of answers depends heavily on the quality of document retrieval. Poor retrieval leads to poor answers.
+
+2. Context Window: There's a limit to how much context can be provided to the LLM, which may restrict the amount of information available for answering complex questions.
+
+3. Single Session: Basic RAG systems don't maintain conversation history across multiple questions.
+
+4. Language Limitations: The system is typically optimized for English text and may not perform as well with other languages.
+
+Best Practices
+==============
+
+1. Chunk Size: Use 500-character chunks with 100-character overlap for optimal balance between context preservation and retrieval precision.
+
+2. Temperature: Set LLM temperature to 0.0 for factual consistency in document-based Q&A.
+
+3. Top-k Retrieval: Retrieve the top 3 most relevant chunks to provide sufficient context without overwhelming the LLM.
+
+4. Prompt Engineering: Use custom prompts that explicitly instruct the LLM to answer only from provided context.
+
+Conclusion
+==========
+RAG represents a powerful approach to building intelligent document Q&A systems that provide accurate, sourced answers. By combining retrieval with generation, it overcomes many limitations of traditional fine-tuning approaches while maintaining transparency and verifiability.
