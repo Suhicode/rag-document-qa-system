@@ -235,23 +235,6 @@ document-qa-rag/
 - **Input Validation**: 1000-char limit
 - **Max Chunks Warning**: Alerts at >1000 chunks
 
-## How I Would Explain This Project in an Interview
-
-**"I built an enterprise-grade RAG system that goes well beyond basic requirements. Here's what makes it interview-ready:"**
-
-1. **Complete Core Implementation**: End-to-end RAG with document processing, embeddings, vector storage, and strict hallucination control using 5-layer validation
-
-2. **Comprehensive Bonus Features**: Added 6 major enhancements - Streamlit web UI, 8+ document formats, conversation memory, evaluation metrics, chunking comparison, and full unit test coverage
-
-3. **Production-Grade Design**: Used all-MiniLM-L6-v2 for efficient embeddings, ChromaDB for persistence, modular architecture for maintainability, and comprehensive error handling
-
-4. **Quality Assurance**: 30+ unit tests covering all components, quantitative evaluation metrics (relevance, coverage, grounding), and benchmarking tools for optimization
-
-5. **User Experience**: Both CLI and web interfaces, conversation memory for context, clear source citations, and helpful error messages with recovery suggestions
-
-6. **Scalability Roadmap**: Designed with clear upgrade paths - mentions Pinecone/Weaviate for distributed storage, vLLM for inference optimization, and Redis for caching
-
-**The key insight**: This isn't just a working RAG system - it's a complete, tested, and production-ready solution with professional documentation and extensible architecture suitable for real-world deployment.
 
 ## License
 
