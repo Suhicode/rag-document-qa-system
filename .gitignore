@@ -32,6 +32,10 @@ temp_*
 # Outputs (keep structure but ignore generated files)
 outputs/*.txt
 output_screenshots/*.png
+# Force-include output_screenshots folder (project screenshots)
+!output_screenshots/
+!output_screenshots/**/*.png
+!output_screenshots/**/*.jpg
 
 # Environment variables
 .env
